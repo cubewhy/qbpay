@@ -37,7 +37,13 @@ public class WebController {
 
     @RequestMapping("/enQrcode")
     public void enQrcode(HttpServletResponse resp, String url) throws IOException {
-        if (url != null && !"".equals(url)) {
+        // wxp://
+        // qr.alipay.com
+        if (url != null && !url.isEmpty()) {
+            if (!(url.startsWith("wxp://") || url.startsWith("qr.alipay.com"))) {
+                // 赞赏码图片
+                resp.sendRedirect(url); // 直接重定向
+            }
             ServletOutputStream stream = null;
             try {
                 int width = 200;//图片的宽度

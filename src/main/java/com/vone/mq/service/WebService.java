@@ -20,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @Service
 public class WebService {
@@ -83,7 +84,7 @@ public class WebService {
             payUrl = settingDao.findById("zfbpay").get().getVvalue();
         }
 
-        if (payUrl == "") {
+        if (Objects.equals(payUrl, "")) {
             return ResUtil.error("请您先进入后台配置程序");
         }
 
@@ -122,7 +123,7 @@ public class WebService {
 
 
         String timeOut = settingDao.findById("close").get().getVvalue();
-        CreateOrderRes createOrderRes = new CreateOrderRes(payId, orderId, type, priceD, reallyPrice, payUrl, isAuto, 0, Integer.valueOf(timeOut), payOrder.getCreateDate());
+        CreateOrderRes createOrderRes = new CreateOrderRes(payId, orderId, type, priceD, reallyPrice, payUrl, isAuto, 0, Integer.parseInt(timeOut), payOrder.getCreateDate());
 
         return ResUtil.success(createOrderRes);
     }
