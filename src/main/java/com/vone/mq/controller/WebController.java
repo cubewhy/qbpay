@@ -40,7 +40,7 @@ public class WebController {
         // wxp://
         // qr.alipay.com
         if (url != null && !url.isEmpty()) {
-            if (!(url.startsWith("wxp://") || url.startsWith("qr.alipay.com"))) {
+            if (!(url.startsWith("wxp://") || url.startsWith("https://qr.alipay.com"))) {
                 // 赞赏码图片
                 resp.sendRedirect(url); // 直接重定向
             }
