@@ -21,7 +21,7 @@ public class HttpRequest {
      * @return URL 所代表远程资源的响应结果
      */
     public static String sendGet(String url, String param) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         BufferedReader in = null;
         try {
             URLConnection connection = getUrlConnection(url, param);
@@ -36,12 +36,12 @@ public class HttpRequest {
                     connection.getInputStream()));
             String line;
             while ((line = in.readLine()) != null) {
-                result += line;
+                result.append(line);
             }
         } catch (Exception e) {
             log.error("发送GET请求出现异常！{}", String.valueOf(e));
             log.error(e);
-            result = "服务器无响应";
+            result = new StringBuilder("服务器无响应");
         }
         // 使用finally块来关闭输入流
         finally {
@@ -53,7 +53,7 @@ public class HttpRequest {
                 log.error(e2);
             }
         }
-        return result;
+        return result.toString();
     }
 
     private static URLConnection getUrlConnection(String url, String param) throws IOException {
