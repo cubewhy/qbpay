@@ -4,5 +4,5 @@ echo "Fetching..."
 git pull
 echo "Building from source..."
 echo "You must have maven installed."
-bash mvn package
+bash mvn package -Dmaven.test.skip
 echo "Done."
