@@ -11,6 +11,7 @@ import com.vone.mq.dto.CommonRes;
 import com.vone.mq.dto.CreateOrderRes;
 import com.vone.mq.service.WebService;
 import com.vone.mq.utils.ResUtil;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -28,6 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+@Log4j2
 public class WebController {
 
     @Autowired
@@ -94,7 +96,7 @@ public class WebController {
                 Result result = multiFormatReader.decode(binaryBitmap, hints);
 
                 //stream.print(result.getText());
-                System.out.println(result.getText());
+                log.info(result.getText());
                 return ResUtil.success(result.getText());
             } catch (Exception e) {
                 e.printStackTrace();
