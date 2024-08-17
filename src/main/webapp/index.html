@@ -1,101 +1,164 @@
-
 <!DOCTYPE HTML>
-
-<html>
+<html lang="zh">
 <head>
-	<title>V免签</title>
-	<meta name="keywords" content="" />
-	<meta name="description" content="" />
+	<title>QBPay - 革新个人支付解决方案</title>
 	<meta charset="utf-8" />
-	<link rel="shortcut icon" href="/favicon.ico" />
-	<link rel="bookmark" href="/favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="/assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
 </head>
 <body>
-<div id="wrapper">
-
-	<header id="header">
-		<div class="logo">
-			<span class="icon fa-rmb"></span>
+<header>
+	<nav class="container">
+		<div class="logo">QBPay</div>
+		<div class="nav-links">
+			<a href="#features">功能</a>
+			<a href="#about">关于我们</a>
+			<a href="#login">登录</a>
 		</div>
-		<div class="content">
-			<div class="inner">
-				<h1>V免签</h1>
+	</nav>
+</header>
 
-				<p>个人用户收款解决方案</p>
+<main>
+	<section class="hero">
+		<div class="container hero-content">
+			<h1>革新个人支付方式</h1>
+			<p>安全、快速、无需签约的支付解决方案</p>
+			<a href="#login" class="cta-button">立即开始</a>
+		</div>
+		<div class="floating-elements">
+			<i class="fas fa-coins floating-element"></i>
+			<i class="fas fa-credit-card floating-element"></i>
+			<i class="fas fa-shield-alt floating-element"></i>
+			<i class="fas fa-chart-line floating-element"></i>
+		</div>
+	</section>
+
+	<section id="features" class="features">
+		<div class="container">
+			<h2>为什么选择 QBPay</h2>
+			<div class="feature-grid">
+				<div class="feature-card">
+					<i class="fas fa-lock"></i>
+					<h3>安全可靠</h3>
+					<p>采用先进加密技术，保障您的每一笔交易</p>
+				</div>
+				<div class="feature-card">
+					<i class="fas fa-bolt"></i>
+					<h3>快速集成</h3>
+					<p>简单API，轻松对接您的应用</p>
+				</div>
+				<div class="feature-card">
+					<i class="fas fa-hand-holding-usd"></i>
+					<h3>低费率</h3>
+					<p>业内领先的低费率，最大化您的收益</p>
+				</div>
+				<div class="feature-card">
+					<i class="fas fa-headset"></i>
+					<h3>24/7 支持</h3>
+					<p>全天候客户支持，解决您的任何问题</p>
+				</div>
 			</div>
 		</div>
-		<nav>
-			<ul>
-				<li><a href="#login">登录</a></li>
-				<li><a href="#about">简介</a></li>
-			</ul>
-		</nav>
-	</header>
+	</section>
 
-	<div id="main">
-
-		<article id="about">
-			<h2 class="major">简介</h2>
-			<p>1、V免签为个人用户提供支付宝、微信的免签约收款解决方案。</p>
-			<p>2、V免签为开源免费产品，请勿二次出售。</p>
-			<p>3、V免签仅供交流学习使用，请勿用于商业用途。</p>
-			<p>4、请遵守相关法律法规，请勿用于非法用途。</p>
-			<p><input type="submit" value="获取V免签" class="" onclick="window.location.href='https://github.com/szvone/vmqphp';"/></p>
-		</article>
-
-
-		<article id="login">
-			<h2 class="major">登录</h2>
-			<form method="post" action="javascript:login();">
-				<div class="field half first">
-					<label for="user">账号</label>
-					<input type="text" name="user" id="user" />
-				</div>
-				<div class="field half">
-					<label for="pass">密码</label>
-					<input type="password" name="pass" id="pass" />
-				</div>
-
-				<ul class="actions">
-					<li><input id="login2" type="submit" value="登录" class="special" /></li>
-					<li><input type="reset" value="清空" /></li>
-				</ul>
-			</form>
-			<br>
-			<div id="result" role="dialog">
-				<p color class="h5 margin-top-sm text-black-hint" id="msg"></p>
+	<section id="login">
+		<h2 class="major">登录</h2>
+		<form method="post" action="javascript:login();">
+			<div class="field half first">
+				<label for="user">账号</label>
+				<input type="text" name="user" id="user" />
 			</div>
-		</article>
+			<div class="field half">
+				<label for="pass">密码</label>
+				<input type="password" name="pass" id="pass" />
+			</div>
 
-	</div>
+			<div class="actions">
+				<input id="login2" type="submit" value="登录" class="special" />
+				<input type="reset" value="清空" />
+			</div>
+		</form>
+		<br>
+		<div id="result" role="dialog">
+			<p color class="h5 margin-top-sm text-black-hint" id="msg"></p>
+		</div>
+	</section>
+</main>
 
-	<footer id="footer">
-		<p class="copyright">&copy;2019 V免签</p>
-	</footer>
+<footer id="footer">
+	<p class="copyright">&copy;2024 QBPay</p>
+</footer>
 
-</div>
-
-<div id="bg"></div>
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@1.11.3"></script>
-<script src="https://cdn.jsdelivr.net/gh/ajlkn/skel@3.0.1/dist/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<script src="/assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
 <script src="https://lib.baomitu.com/layer/3.1.1/layer.js"></script>
-
-
 <script>
-	function login() {
-		$.post("/login","user="+$("#user").val()+"&pass="+$("#pass").val(),function (data) {
-			layer.msg(data.msg);
-			if (data.code==1){
-				window.location.href = "aaa.html";
-			}
-		});
-	}
+	gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".hero h1", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.5
+    });
+
+    gsap.from(".hero p", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 0.8
+    });
+
+    gsap.from(".cta-button", {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        delay: 1.1
+    });
+
+    gsap.from(".nav-links a", {
+        opacity: 0,
+        y: -20,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out"
+    });
+
+    gsap.from(".feature-card", {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        stagger: 0.2,
+        scrollTrigger: {
+            trigger: ".features",
+            start: "top 80%"
+        }
+    });
+
+    const floatingElements = document.querySelectorAll('.floating-element');
+    floatingElements.forEach(element => {
+        gsap.to(element, {
+            x: "random(-100, 100)",
+            y: "random(-100, 100)",
+            rotation: "random(-180, 180)",
+            duration: "random(20, 40)",
+            repeat: -1,
+            yoyo: true,
+            ease: "none"
+        });
+    });
+
+    function login() {
+        $.post("/login","user="+$("#user").val()+"&pass="+$("#pass").val(),function (data) {
+            layer.msg(data.msg);
+            if (data.code==1){
+                window.location.href = "aaa.html";
+            }
+        });
+    }
 </script>
 </body>
 </html>
