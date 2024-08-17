@@ -132,7 +132,7 @@ public class WebController {
         Double priceD;
         try {
             priceD = Double.valueOf(price);
-        } catch (Exception e){
+        } catch (Exception e) {
             return new Gson().toJson(ResUtil.error("请传入订单金额"));
         }
 

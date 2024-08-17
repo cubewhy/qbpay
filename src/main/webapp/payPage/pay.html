@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,14 +33,17 @@
     <div class="mod-ct">
         <div class="order">
         </div>
-        <div class="amount" id="timeOut" style="font-size: 20px;color: red;display: none;"><p>订单已过期，请您返回网站重新发起支付</p><br></div>
+        <div class="amount" id="timeOut" style="font-size: 20px;color: red;display: none;"><p>
+            订单已过期，请您返回网站重新发起支付</p><br></div>
         <div id="orderbody">
             <div class="amount" id="money">￥{{ reallyPrice }}</div>
             <div class="qrcode-img-wrapper" data-role="qrPayImgWrapper">
                 <div data-role="qrPayImg" class="qrcode-img-area">
-                    <div class="ui-loading qrcode-loading" data-role="qrPayImgLoading" style="display: none;">加载中</div>
+                    <div class="ui-loading qrcode-loading" data-role="qrPayImgLoading" style="display: none;">加载中
+                    </div>
                     <div style="position: relative;display: inline-block;">
-                        <img  id='show_qrcode' alt="加载中..." :src="'/enQrcode?url='+payUrl" width="210" height="210" style="display: block;">
+                        <img id='show_qrcode' alt="加载中..." :src="'/enQrcode?url='+payUrl" width="210" height="210"
+                             style="display: block;">
                         <!--<img onclick="$('#use').hide()" id="use" src="use_1.png" v-if="payType==1"
                              style="position: absolute;top: 50%;left: 50%;width:32px;height:32px;margin-left: -16px;margin-top: -16px">
                         <img onclick="$('#use').hide()" id="use" src="use_2.png" v-if="payType==2"
@@ -56,18 +57,14 @@
 
 
                 <div class="time-item" id="msg">
-                    <h1  v-if="price != reallyPrice">
-                        <span style="color:red">为了您正常支付 请务必付款 {{ reallyPrice }} 元 <br>备注说明无需填写</span><br>
+                    <h1 v-if="price != reallyPrice">
+                        <span style="color:red">为了您正常支付 请务必付款 {{ reallyPrice
+                            }} 元 <br>备注说明无需填写</span><br>
 
 
                     </h1>
 
                 </div>
-
-
-
-
-
 
 
                 <strong id="hour_show">0时</strong>
@@ -136,17 +133,20 @@
             });
         }
     }
+
     function formatDate(now) {
         now = new Date(now)
         return now.getFullYear()
-            + "-" + (now.getMonth()>8?(now.getMonth()+1):"0"+(now.getMonth()+1))
-            + "-" + (now.getDate()>9?now.getDate():"0"+now.getDate())
-            + " " + (now.getHours()>9?now.getHours():"0"+now.getHours())
-            + ":" + (now.getMinutes()>9?now.getMinutes():"0"+now.getMinutes())
-            + ":" + (now.getSeconds()>9?now.getSeconds():"0"+now.getSeconds());
+            + "-" + (now.getMonth() > 8 ? (now.getMonth() + 1) : "0" + (now.getMonth() + 1))
+            + "-" + (now.getDate() > 9 ? now.getDate() : "0" + now.getDate())
+            + " " + (now.getHours() > 9 ? now.getHours() : "0" + now.getHours())
+            + ":" + (now.getMinutes() > 9 ? now.getMinutes() : "0" + now.getMinutes())
+            + ":" + (now.getSeconds() > 9 ? now.getSeconds() : "0" + now.getSeconds());
 
     }
+
     var myTimer;
+
     function timer(intDiff) {
         var i = 0;
         i++;
@@ -199,8 +199,7 @@
     }
 
 
-
-    function qrcode_timeout(){
+    function qrcode_timeout() {
         document.getElementById("orderbody").style.display = "none";
         document.getElementById("timeOut").style.display = "";
     }
@@ -214,19 +213,19 @@
         return null;
     }
 
-    $.post("/getOrder","orderId="+getQueryString("orderId"),function (data) {
-        if (data.code==1){
-            var time = new Date().getTime()-data.data.date;
-            time = time/1000;
-            time = data.data.timeOut*60 - time;
-            if (data.data.state == -1){
+    $.post("/getOrder", "orderId=" + getQueryString("orderId"), function (data) {
+        if (data.code == 1) {
+            var time = new Date().getTime() - data.data.date;
+            time = time / 1000;
+            time = data.data.timeOut * 60 - time;
+            if (data.data.state == -1) {
                 time = 0;
             }
             timer(time);
-            
+
             if (data.data.payType == 1) {
                 data.data.payType1 = "微信";
-            }else if (data.data.payType == 2) {
+            } else if (data.data.payType == 2) {
                 data.data.payType1 = "支付宝";
             }
 
@@ -237,21 +236,21 @@
             })
 
             check();
-        }else{
+        } else {
             timer(0)
         }
     });
 
     function check() {
-        $.post("/checkOrder","orderId="+getQueryString("orderId"),function (data) {
+        $.post("/checkOrder", "orderId=" + getQueryString("orderId"), function (data) {
             console.log(data);
-            if (data.code == 1){
+            if (data.code == 1) {
                 window.location.href = data.data;
-            } else{
+            } else {
                 if (data.data == "订单已过期") {
                     intDiff = 0;
-                }else{
-                    setTimeout("check()",1500);
+                } else {
+                    setTimeout("check()", 1500);
                 }
             }
         })

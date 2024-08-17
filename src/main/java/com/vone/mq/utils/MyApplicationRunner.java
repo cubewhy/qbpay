@@ -22,7 +22,7 @@ public class MyApplicationRunner implements ApplicationRunner {
 
         //查询是不是首次启动，如果是就创建基础的设置数据
         int row = (int) settingDao.count();
-        if (row==0){
+        if (row == 0) {
             System.out.println("检测到系统为首次启动，正在进行数据库初始化...");
             Setting setting = new Setting();
             //管理员账号
@@ -91,7 +91,7 @@ public class MyApplicationRunner implements ApplicationRunner {
 
     public static String md5(String text) {
         //加密后的字符串
-        String encodeStr= DigestUtils.md5DigestAsHex(text.getBytes());
+        String encodeStr = DigestUtils.md5DigestAsHex(text.getBytes());
         return encodeStr;
     }
 }

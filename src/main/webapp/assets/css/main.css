@@ -1,231 +1,234 @@
-		:root {
-            --primary-color: #1a5f7a;
-            --secondary-color: #57c5b6;
-            --accent-color: #159895;
-            --bg-color: #002B5B;
-            --text-color: #ffffff;
-        }
+:root {
+    --primary-color: #1a5f7a;
+    --secondary-color: #57c5b6;
+    --accent-color: #159895;
+    --bg-color: #002B5B;
+    --text-color: #ffffff;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body, html {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
+body, html {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-        header {
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            background: rgba(0,43,91,0.8);
-            backdrop-filter: blur(10px);
-        }
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(0, 43, 91, 0.8);
+    backdrop-filter: blur(10px);
+}
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
 
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
 
-        .nav-links {
-            display: flex;
-            gap: 40px; /* 增加间距 */
-        }
+.nav-links {
+    display: flex;
+    gap: 40px; /* 增加间距 */
+}
 
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 20px; /* 增加内边距 */
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px 20px; /* 增加内边距 */
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
 
-        .nav-links a:hover {
-            background-color: var(--secondary-color);
-            color: var(--bg-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
+.nav-links a:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
 
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
 
-        .cta-button {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary-color);
-            color: var(--bg-color);
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
 
-        .cta-button:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
+.cta-button:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
 
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
+.floating-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
 
-        .floating-element {
-            position: absolute;
-            opacity: 0.1;
-        }
+.floating-element {
+    position: absolute;
+    opacity: 0.1;
+}
 
-        .features {
-            padding: 100px 0;
-        }
+.features {
+    padding: 100px 0;
+}
 
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-        }
+.features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
 
-        .feature-card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
+.feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
 
-        .feature-card i {
-            font-size: 3rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-        }
+.feature-card i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
 
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
 
-        #login {
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            max-width: 400px;
-            margin: 50px auto;
-        }
+#login {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 50px auto;
+}
 
-        #login h2 {
-            color: var(--secondary-color);
-            margin-bottom: 30px;
-            text-align: center;
-        }
+#login h2 {
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    text-align: center;
+}
 
-        #login input[type="text"],
-        #login input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--text-color);
-            border-radius: 5px;
-        }
+#login input[type="text"],
+#login input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+    border-radius: 5px;
+}
 
-        #login .actions {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-        }
+#login .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
 
-        #login input[type="submit"],
-        #login input[type="reset"] {
-            flex: 1;
-            background-color: var(--secondary-color);
-            color: var(--bg-color);
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
+#login input[type="submit"],
+#login input[type="reset"] {
+    flex: 1;
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-        #login input[type="submit"]:hover,
-        #login input[type="reset"]:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
+#login input[type="submit"]:hover,
+#login input[type="reset"]:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                gap: 20px;
-            }
-            .nav-links a {
-                padding: 8px 15px;
-            }
-        }
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        padding: 8px 15px;
+    }
+}

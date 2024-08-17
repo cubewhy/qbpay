@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
-    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="telephone=no"/>
     <title>支付确认</title>
     <script>
-        var ua=navigator.userAgent;
-        var url=location.search?location.search.split('?')[1]:'';
-        url&&url.substr(url.length-1,1)=='='&&(url=url.substring(0,url.length-1));
-        if(url&&!(/MicroMessenger/i.test(ua))&&!(/QQ/i.test(ua))){
+        var ua = navigator.userAgent;
+        var url = location.search ? location.search.split('?')[1] : '';
+        url && url.substr(url.length - 1, 1) == '=' && (url = url.substring(0, url.length - 1));
+        if (url && !(/MicroMessenger/i.test(ua)) && !(/QQ/i.test(ua))) {
 
-            window.location.href=url;
+            window.location.href = url;
         }
     </script>
     <style>
@@ -21,6 +21,7 @@
             -webkit-text-size-adjust: 100%;
             font-family: sans-serif;
         }
+
         .fui-content {
             position: absolute;
             top: 0;
@@ -30,6 +31,7 @@
             overflow: auto;
             -webkit-overflow-scrolling: touch;
         }
+
         * {
             box-sizing: border-box;
             -webkit-tap-highlight-color: transparent;
@@ -37,6 +39,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             position: absolute;
             top: 0;
@@ -50,12 +53,15 @@
             background: #fafafa;
             overflow: hidden;
         }
+
         .fui-page-group {
             display: block;
         }
+
         .fui-page.fui-page-current, .fui-page-group.fui-page-current {
             overflow: hidden;
         }
+
         .fui-content {
             background-color: #019fe8;
             background-image: url(alipay.png);
@@ -76,6 +82,7 @@
             background-size: 28%;
             color: #fff;
         }
+
         .layer .text {
             height: 10rem;
             width: 13rem;
@@ -86,17 +93,58 @@
             margin-left: -5.5rem;
             font-size: 1.1rem;
         }
-        .danmu {display: none;opacity: 0;}
+
+        .danmu {
+            display: none;
+            opacity: 0;
+        }
     </style>
 </head>
 
 <body ontouchstart>
 <div class='fui-page-group statusbar'>
     <style>
-        .fui-content {background-color: #019fe8; background-image: url("alipay.png"); background-repeat: no-repeat; background-size: 80%; background-position: center 8rem;}
-        .layer {position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-image: url("guide.png"); background-repeat: no-repeat; background-position: top right; background-size: 28%; color: #fff;}
-        .layer .text{height: 10rem; width: 13rem; color: #fff; position: absolute; top: 2.5remimg/; left: 50%; margin-left: -5.5rem; font-size: 1.1rem;}
-        .layer .tip {height: 1rem; left: 0; right: 0; bottom: 3rem; position: absolute; font-size: 0.8rem; text-align: center;}
+        .fui-content {
+            background-color: #019fe8;
+            background-image: url("alipay.png");
+            background-repeat: no-repeat;
+            background-size: 80%;
+            background-position: center 8rem;
+        }
+
+        .layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("guide.png");
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: 28%;
+            color: #fff;
+        }
+
+        .layer .text {
+            height: 10rem;
+            width: 13rem;
+            color: #fff;
+            position: absolute;
+            top: 2.5remimg/;
+            left: 50%;
+            margin-left: -5.5rem;
+            font-size: 1.1rem;
+        }
+
+        .layer .tip {
+            height: 1rem;
+            left: 0;
+            right: 0;
+            bottom: 3rem;
+            position: absolute;
+            font-size: 0.8rem;
+            text-align: center;
+        }
     </style>
 
     <div class='fui-page  fui-page-current order-create-page'>
@@ -115,7 +163,7 @@
 
     <script>
         AlipayWallet = {};
-        var href='http://qr.alipay.com/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FsaId%3D10000007%26clientVersion%3D3.7.0.0718%26qrcode%3D'+encodeURIComponent(url)+'%253F_s%253Dweb-other';
+        var href = 'http://qr.alipay.com/?scheme=alipays%3A%2F%2Fplatformapi%2Fstartapp%3FsaId%3D10000007%26clientVersion%3D3.7.0.0718%26qrcode%3D' + encodeURIComponent(url) + '%253F_s%253Dweb-other';
         (function () {
             var ua = navigator.userAgent.toLowerCase(),
                 locked = false,
@@ -253,7 +301,7 @@
 
                     var alipaysUrl = schemePrefix + '://platformapi/startapp?' + o.params;
 
-                    if ( ua.indexOf('qq/') > -1 || ( ua.indexOf('safari') > -1 && (ua.indexOf('os 9_') > -1 || ua.indexOf('os 10_') > -1)) ) {
+                    if (ua.indexOf('qq/') > -1 || (ua.indexOf('safari') > -1 && (ua.indexOf('os 9_') > -1 || ua.indexOf('os 10_') > -1))) {
                         var openSchemeLink = document.getElementById('openSchemeLink');
                         if (!openSchemeLink) {
                             openSchemeLink = document.createElement('a');
@@ -270,7 +318,6 @@
                         ifr.style.display = 'none';
                         document.body.appendChild(ifr);
                     }
-
 
 
                 } else {

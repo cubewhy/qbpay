@@ -5,7 +5,7 @@ import com.vone.mq.dto.CommonRes;
 
 public class ResUtil {
 
-    public static CommonRes success(Object o){
+    public static CommonRes success(Object o) {
         CommonRes commonRes = new CommonRes();
         commonRes.setCode(1);
         commonRes.setMsg("成功");
@@ -13,21 +13,21 @@ public class ResUtil {
         return commonRes;
     }
 
-    public static CommonRes success(){
+    public static CommonRes success() {
         CommonRes commonRes = new CommonRes();
         commonRes.setCode(1);
         commonRes.setMsg("成功");
         return commonRes;
     }
 
-    public static CommonRes error(String msg){
+    public static CommonRes error(String msg) {
         CommonRes commonRes = new CommonRes();
         commonRes.setCode(-1);
         commonRes.setMsg(msg);
         return commonRes;
     }
 
-    public static CommonRes error(int code,Object data){
+    public static CommonRes error(int code, Object data) {
         CommonRes commonRes = new CommonRes();
         commonRes.setCode(code);
         commonRes.setMsg("失败");
@@ -35,7 +35,7 @@ public class ResUtil {
         return commonRes;
     }
 
-    public static CommonRes error(){
+    public static CommonRes error() {
         CommonRes commonRes = new CommonRes();
         commonRes.setCode(-1);
         commonRes.setMsg("失败");
